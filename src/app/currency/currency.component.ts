@@ -55,4 +55,11 @@ export class CurrencyComponent implements OnInit, AfterViewInit {
   trackAmount(index: number) {
     this.calcOtherAmount(index);
   }
+
+  getRateBasedUAH(currency: string) {
+    const UAHRate = this.Rate.getRate("UAH");
+    const destRate = this.Rate.getRate(currency);
+    const result = destRate / UAHRate ;
+    return result.toFixed(4)
+  }
 }

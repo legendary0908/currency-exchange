@@ -1,3 +1,17 @@
+<div class="header">
+  <div class="header-title">
+    <span>Currency Exchange</span>
+  </div>
+  <div class="header-rates">
+    <div class="header-rate spacing">
+      USD: {{getRateBasedUAH("USD")}}
+    </div>
+    <div class="header-rate spacing">
+      EUR: {{getRateBasedUAH("EUR")}}
+    </div>
+  </div>
+</div>
+
 <div class="center-align pt-4">
   <div *ngFor="let data of allData; index as i">
     <mat-form-field class="spacing">
