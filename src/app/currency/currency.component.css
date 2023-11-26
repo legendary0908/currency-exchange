@@ -1,0 +1,35 @@
+.right-align {
+  text-align: right;
+}
+
+input.right-align::-webkit-outer-spin-button,
+input.right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.right-align {
+  -moz-appearance: textfield;
+}
+
+.vertical-align-reverse {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.vertical-align {
+  display: flex;
+  align-items: center;
+}
+
+.spacing {
+  margin: 0 10px;
+}
+
+.center-align {
+  text-align: center;
+}
+
+.pt-4 {
+  padding-top: 40px;
+}
