@@ -180,12 +180,6 @@ export default [
         "Code": "BRL"
     },
     {
-        "Country": "British Indian Ocean Territory",
-        "CountryCode": "IO",
-        "Currency": "USD",
-        "Code": "USD"
-    },
-    {
         "Country": "Brunei Darussalam",
         "CountryCode": "BN",
         "Currency": "Bruneian Dollar",
@@ -364,12 +358,6 @@ export default [
         "CountryCode": "DO",
         "Currency": "Dominican Peso",
         "Code": "DOP"
-    },
-    {
-        "Country": "East Timor",
-        "CountryCode": "TP",
-        "Currency": "Indonesian Rupiah",
-        "Code": "IDR"
     },
     {
         "Country": "Ecuador",
