@@ -13,6 +13,8 @@ import {MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule} from '@angular/mater
 import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -27,7 +29,7 @@ import {MatSelectModule} from '@angular/material/select';
     BrowserAnimationsModule,
     MatInputModule,    
     ReactiveFormsModule ,
-
+    HttpClientModule,
     MatButtonModule,
     MatFormFieldModule,
     MatIconModule,

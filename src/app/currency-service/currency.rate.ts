@@ -1,5 +1,5 @@
 export class CurrencyRate {
-    currencyURL = "https://api.currencyapi.com/v3/latest?apikey=cur_live_HOrHHeHv6MqnG2hmtncpfzjVUEppP5gLopWavF6B";
+    currencyURL = "https://api.currencyapi.com/v3/latest?apikey=cur_live_tcmpNBTfKz6ic3ZvkDV9C6PorsLXtzJTTw9XX35A_";
     rates: any = {}
     constructor(){
         this.loadData();
