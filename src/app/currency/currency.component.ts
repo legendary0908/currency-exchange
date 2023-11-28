@@ -1,6 +1,4 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { CurrencyRate } from '../currency-service/currency.rate';
-import CurrencyCodes from '../currency-service/code.currency';
 import { CurrencyService } from '../service/currency.service';
 import { CountryCodesService } from '../service/country.codes.service';
 
@@ -26,10 +24,10 @@ export class CurrencyComponent implements OnInit, AfterViewInit {
       Amount: 1
     }
   ];
-  CurrencyRates: any;
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+  CurrencyRates: any;  
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   CountryCodes: any;
-  Rate = new CurrencyRate();
-  CurrencyCodeInformation = CurrencyCodes;
 
   constructor(
     private CurrencyService: CurrencyService,
@@ -52,7 +50,7 @@ export class CurrencyComponent implements OnInit, AfterViewInit {
   }
 
   trackCurrency(index: number) {
-    let tmp = this.CurrencyCodeInformation.find(value => (value.Country === this.allData[index].Country))
+    let tmp = this.CountryCodes.find((value: any) => (value.Country === this.allData[index].Country))
     if (tmp) {
       this.allData[index] = {
         ...tmp,
@@ -65,8 +63,8 @@ export class CurrencyComponent implements OnInit, AfterViewInit {
   calcOtherAmount(index: number) {
     let otherIndex = 1 - index;
     this.allData[otherIndex].Amount =
-      this.allData[index].Amount / this.Rate.getRate(this.allData[index].Code)
-      * this.Rate.getRate(this.allData[otherIndex].Code)
+      this.allData[index].Amount / this.CurrencyRates[this.allData[index].Code]
+      * this.CurrencyRates[this.allData[otherIndex].Code]
   }
 
   trackAmount(index: number) {
@@ -74,8 +72,8 @@ export class CurrencyComponent implements OnInit, AfterViewInit {
   }
 
   getRateBasedUAH(currency: string) {
-    const UAHRate = this.Rate.getRate("UAH");
-    const destRate = this.Rate.getRate(currency);
+    const UAHRate = this.CurrencyRates["UAH"];
+    const destRate = this.CurrencyRates[currency];
     const result = destRate / UAHRate;
     return result.toFixed(4)
   }

@@ -24,7 +24,7 @@
     <mat-form-field class="spacing">
       <mat-label>Select a country</mat-label>
       <mat-select [(ngModel)]="data.Country" (ngModelChange)="trackCurrency(i)">
-        <mat-option *ngFor="let item of CurrencyCodeInformation" value={{item.Country}}>
+        <mat-option *ngFor="let item of CountryCodes" value={{item.Country}}>
           <span class="vertical-align">
             <img src="https://flagsapi.com/{{item.CountryCode}}/flat/16.png">
             &nbsp;
