@@ -31,6 +31,9 @@ import { MatSelectModule } from '@angular/material/select';
     MatDividerModule,
     MatSelectModule
   ],
+  exports: [
+    CurrencyComponent
+  ],
   providers: [
     {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}
   ],
