@@ -1,0 +1,37 @@
+<div class="header">
+    <div class="header-title">
+      <span>Currency Exchange</span>
+    </div>
+    <div class="header-rates">
+      <div class="header-rate spacing">
+        USD: {{getRateBasedUAH("USD")}}
+      </div>
+      <div class="header-rate spacing">
+        EUR: {{getRateBasedUAH("EUR")}}
+      </div>
+    </div>
+  </div>
+  
+  <div class="center-align pt-4">
+    <div *ngFor="let data of allData; index as i">
+      <mat-form-field class="spacing">
+        <mat-label>Amount</mat-label>
+        <input matInput type="number" [(ngModel)]="data.Amount" class="right-align" (ngModelChange)="trackAmount(i)">
+        <span matTextPrefix class="vertical-align-reverse">
+          <img src="https://flagsapi.com/{{data.CountryCode}}/flat/16.png">{{data.Code}}&nbsp;
+        </span>
+      </mat-form-field>
+      <mat-form-field class="spacing">
+        <mat-label>Select a country</mat-label>
+        <mat-select [(ngModel)]="data.Country" (ngModelChange)="trackCurrency(i)">
+          <mat-option *ngFor="let item of CountryCodes" value={{item.Country}}>
+            <span class="vertical-align">
+              <img src="https://flagsapi.com/{{item.CountryCode}}/flat/16.png">
+              &nbsp;
+              {{item.Country}}
+            </span>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>

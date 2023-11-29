@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { CurrencyService } from '../service/currency.service';
-import { CountryCodesService } from '../service/country.codes.service';
+import { CurrencyService } from './currency.service';
 
 @Component({
   selector: 'app-currency',
@@ -31,11 +30,10 @@ export class CurrencyComponent implements OnInit, AfterViewInit {
 
   constructor(
     private CurrencyService: CurrencyService,
-    private CountryCodesService: CountryCodesService
   ) {}
 
   ngOnInit(): void {
-    this.CountryCodes = this.CountryCodesService.getAllCountryCodes();
+    this.CountryCodes = this.CurrencyService.getAllCountryCodes();
     this.CurrencyService.getData().subscribe(
       (rates: any) => {
         this.CurrencyRates = {};
