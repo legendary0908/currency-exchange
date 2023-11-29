@@ -5,7 +5,7 @@ import { passwordStrengthValidator, confirmPasswordValidator } from './password-
 @Component({
     selector: 'password-validation',
     templateUrl: './password-validation.component.html',
-    styleUrls: ['./password-validation.component.scss']
+    styleUrls: ['./password-validation.component.css']
 })
 export class PasswordValidationComponent implements OnInit {
     formGroup: FormGroup ;
